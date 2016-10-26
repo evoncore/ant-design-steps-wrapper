@@ -1,5 +1,5 @@
 import React from 'react';
-import stepWrapper from './stepWrapper';
+import StepWrapper from './StepWrapper';
 
 // Connect
 import { connect } from 'react-redux';
@@ -20,20 +20,16 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.steps = stepWrapper(
-      [
-        <StepOne title="1" />,
-        <StepTwo title="2" />,
-        <StepThree title="3" />
-      ]
-    );
   }
 
   render() {
     return (
       <div className="container" id="app">
-        {this.steps}
+        <StepWrapper>
+          <StepOne title="1" />
+          <StepTwo title="2" />
+          <StepThree title="3" />
+        </StepWrapper>
       </div>
     );
   }
